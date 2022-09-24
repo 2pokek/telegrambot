@@ -34,13 +34,15 @@ def callback_inline(call):
             bot.send_message(call.message.chat.id, 'Какого числа у тебя День рождения?(Цифрами и без нуля в начале)')
             bot.register_next_step_handler(call.message, zodiac1_sign)
         if call.data == "2":
-            x = random.randint(1, 3)
+            x = random.randint(1, 4)
             if x == 1:
                 a = 'Вас ждет что-то хорошее'
             elif x == 2:
                 a = 'Вас ждет успех'
             elif x == 3:
                 a = 'Вы скоро обрадуетесь'
+            elif x == 4:
+                a = 'Вас ждет потрясение'
             bot.send_message(call.message.chat.id, a, reply_markup=keyboard)
 
 
